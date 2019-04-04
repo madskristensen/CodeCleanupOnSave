@@ -4,6 +4,7 @@
         <Identity Id="66985471-b701-4851-a2d7-5a8bdce1e694" Version="1.0" Language="en-US" Publisher="Mads Kristensen" />
         <DisplayName>Code Cleanup On Save</DisplayName>
         <Description xml:space="preserve">Automatically run one of the Code Clean profiles when saving the document. This ensures your code is always formatted correctly and follows your coding style conventions.</Description>
+        <MoreInfo>https://github.com/madskristensen/CodeCleanupOnSave</MoreInfo>
         <License>Resources\LICENSE</License>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
