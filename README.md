@@ -2,6 +2,8 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/bh50nba9a5o8y5sf?svg=true)](https://ci.appveyor.com/project/madskristensen/codecleanuponsave)
 
+Automatically run one of the Code Clean profiles when saving the document. This ensures your code is always formatted correctly and follows your coding style conventions.
+
 Download the extension at the
 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.CodeCleanupOnSave)
 or try the
@@ -9,7 +11,9 @@ or try the
 
 ---------------------------------------
 
-Automatically run one of the Code Clean profiles when saving the document. This ensures your code is always formatted correctly and follows your coding style conventions.
+Code Cleanup is a new feature of Visual Studio 2019 that will automatically clean up your code file to make sure it is formatted correctly and that your coding style preferences are applied. 
+
+This extension will perfor the Code Cleanup automatically when the file is being saved.
 
 ### Configure Code Cleanup profiles
 
