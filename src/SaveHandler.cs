@@ -21,6 +21,11 @@ namespace CodeCleanupOnSave
 
         public bool ExecuteCommand(SaveCommandArgs args, CommandExecutionContext executionContext)
         {
+            if (!GeneralOptions.Instance.Enabled)
+            {
+                return true;
+            }
+
             try
             {
                 IEditorCommandHandlerService service = _commandService.GetService(args.TextView);
@@ -43,7 +48,7 @@ namespace CodeCleanupOnSave
                 System.Diagnostics.Debug.WriteLine(ex);
             }
 
-            return false;
+            return true;
         }
 
         public CommandState GetCommandState(SaveCommandArgs args)

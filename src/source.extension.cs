@@ -11,7 +11,7 @@ namespace CodeCleanupOnSave
         public const string Name = "Code Cleanup On Save";
         public const string Description = @"Automatically run one of the Code Clean profiles when saving the document. This ensures your code is always formatted correctly and follows your coding style conventions.";
         public const string Language = "en-US";
-        public const string Version = "1.0";
+        public const string Version = "1.0.999";
         public const string Author = "Mads Kristensen";
         public const string Tags = "cleanup, formatting";
     }
