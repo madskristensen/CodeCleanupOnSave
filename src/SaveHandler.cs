@@ -1,10 +1,10 @@
-﻿using System;
-using System.ComponentModel.Composition;
-using Microsoft.VisualStudio.Commanding;
+﻿using Microsoft.VisualStudio.Commanding;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Editor.Commanding;
 using Microsoft.VisualStudio.Text.Editor.Commanding.Commands;
 using Microsoft.VisualStudio.Utilities;
+using System;
+using System.ComponentModel.Composition;
 
 namespace CodeCleanupOnSave
 {
@@ -16,8 +16,13 @@ namespace CodeCleanupOnSave
     {
         public string DisplayName => nameof(SaveHandler);
 
-        [Import]
         private readonly IEditorCommandHandlerServiceFactory _commandService;
+
+        [ImportingConstructor]
+        public SaveHandler(IEditorCommandHandlerServiceFactory commandService)
+        {
+            _commandService = commandService;
+        }
 
         public bool ExecuteCommand(SaveCommandArgs args, CommandExecutionContext executionContext)
         {
