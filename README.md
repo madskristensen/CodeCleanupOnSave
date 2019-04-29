@@ -13,7 +13,7 @@ or try the
 
 Code Cleanup is a new feature of Visual Studio 2019 that will automatically clean up your code file to make sure it is formatted correctly and that your coding style preferences are applied. 
 
-This extension will perfor the Code Cleanup automatically when the file is being saved.
+This extension will perform the Code Cleanup automatically when the file is being saved.
 
 ### Configure Code Cleanup profiles
 
