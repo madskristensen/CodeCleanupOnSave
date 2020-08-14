@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Threading;
 using Microsoft.VisualStudio.Shell;
+using static Microsoft.VisualStudio.VSConstants;
+using Task = System.Threading.Tasks.Task;
 
 namespace CodeCleanupOnSave
 {
@@ -8,9 +11,15 @@ namespace CodeCleanupOnSave
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideOptionPage(typeof(DialogPageProvider.General), "Environment", "Code Cleanup on Save", 0, 0, true, new[] { "Code Cleanup on Save" }, ProvidesLocalizedCategoryName = false)]
     [ProvideProfile(typeof(DialogPageProvider.General), "Environment", Vsix.Name, 0, 0, true)]
-    [Guid("aee4d337-3c9a-4f9b-86ae-6dd7bd751bd5")]
+    [ProvideAutoLoad(UICONTEXT.SolutionExistsAndNotBuildingAndNotDebugging_string, PackageAutoLoadFlags.BackgroundLoad)]
+    [Guid(PackageGuids.guidCodeCleanupOnSavePackageString)]
+    [ProvideMenuResource("Menus.ctmenu", 1)]
     public sealed class CodeCleanupOnSavePackage : AsyncPackage
     {
-
+        protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
+        {
+            await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+            await RunOnSave.InitializeAsync(this);
+        }
     }
 }

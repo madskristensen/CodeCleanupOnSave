@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidCodeCleanupOnSavePackage">
+    <Buttons>
+      <Button guid="guidCodeCleanupOnSavePackageCmdSet" id="RunOnSave" priority="0x0300" type="Button">
+        <Parent guid="guidEditorCommands" id="IDG_CTX_CODECLEANUP_PROFILES" />
+        <Strings>
+          <ButtonText>Run on Save</ButtonText>
+          <LocCanonicalName>.CodeCleanup.RunOnSave</LocCanonicalName>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidCodeCleanupOnSavePackage" value="{aee4d337-3c9a-4f9b-86ae-6dd7bd751bd5}" />
+    <GuidSymbol name="guidValidFile" value="{e53facf8-0840-4d99-bd57-fafcb7de25e4}" />
+    
+    <GuidSymbol name="guidCodeCleanupOnSavePackageCmdSet" value="{d8b9208d-7e71-4fbe-9c53-6950c7c5679b}">
+      <IDSymbol name="RunOnSave" value="0x0100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidEditorCommands" value="{160961B3-909D-4B28-9353-A1BEF587B4A6}">
+      <IDSymbol name="IDG_CTX_CODECLEANUP_PROFILES" value="0x0025" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
