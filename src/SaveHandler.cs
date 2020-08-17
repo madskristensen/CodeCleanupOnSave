@@ -13,7 +13,9 @@ namespace CodeCleanupOnSave
 {
     [Export(typeof(ICommandHandler))]
     [Name(nameof(SaveHandler))]
-    [ContentType("code")]
+    [ContentType("csharp")]
+    [ContentType("basic")]
+    [ContentType("f#")]
     [TextViewRole(PredefinedTextViewRoles.PrimaryDocument)]
     public class SaveHandler : ICommandHandler<SaveCommandArgs>
     {

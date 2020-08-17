@@ -11,7 +11,9 @@ namespace CodeCleanupOnSave
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideOptionPage(typeof(DialogPageProvider.General), "Environment", "Code Cleanup on Save", 0, 0, true, new[] { "Code Cleanup on Save" }, ProvidesLocalizedCategoryName = false)]
     [ProvideProfile(typeof(DialogPageProvider.General), "Environment", Vsix.Name, 0, 0, true)]
-    [ProvideAutoLoad(UICONTEXT.SolutionExistsAndNotBuildingAndNotDebugging_string, PackageAutoLoadFlags.BackgroundLoad)]
+    [ProvideAutoLoad(UICONTEXT.CSharpProject_string, PackageAutoLoadFlags.BackgroundLoad)]
+    [ProvideAutoLoad(UICONTEXT.VBProject_string, PackageAutoLoadFlags.BackgroundLoad)]
+    [ProvideAutoLoad(UICONTEXT.FSharpProject_string, PackageAutoLoadFlags.BackgroundLoad)]
     [Guid(PackageGuids.guidCodeCleanupOnSavePackageString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     public sealed class CodeCleanupOnSavePackage : AsyncPackage
