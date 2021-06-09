@@ -170,14 +170,8 @@ namespace CodeCleanupOnSave
 
         private static async Task<ShellSettingsManager> GetSettingsManagerAsync()
         {
-#pragma warning disable VSTHRD010 
-            // False-positive in Threading Analyzers. Bug tracked here https://github.com/Microsoft/vs-threading/issues/230
-            var svc = await AsyncServiceProvider.GlobalProvider.GetServiceAsync(typeof(SVsSettingsManager)) as IVsSettingsManager;
-#pragma warning restore VSTHRD010 
-
-            Assumes.Present(svc);
-
-            return new ShellSettingsManager(svc);
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
+            return new ShellSettingsManager(ServiceProvider.GlobalProvider);
         }
 
         private IEnumerable<PropertyInfo> GetOptionProperties()

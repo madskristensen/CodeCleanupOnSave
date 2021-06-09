@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using EnvDTE;
+using EnvDTE80;
 using Microsoft.VisualStudio.Commanding;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Text;
@@ -38,7 +39,7 @@ namespace CodeCleanupOnSave
             {
                 var filePath = textDoc.FilePath;
 
-                var dte = Package.GetGlobalService(typeof(DTE)) as DTE;
+                var dte = Package.GetGlobalService(typeof(DTE)) as DTE2;
                 ProjectItem item = dte.Solution?.FindProjectItem(filePath);
 
                 if (string.IsNullOrEmpty(item?.ContainingProject?.FullName))
