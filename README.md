@@ -21,7 +21,7 @@ At the bottom of the C# editor, click the Configure Code Cleanup.
 
 ![Code Cleanup Menu](art/code-cleanup-menu.png)
 
-By default, **Profile 1** is executed on save by this extenions.
+By default, **Profile 1** is executed on save by this extension.
 
 ### Options
 The options page allows you to chose between which profile to run automatically on save.
